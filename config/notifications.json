@@ -1,0 +1,31 @@
+{
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "from_addr": "alerts@iot-shodan.local",
+    "username": "your_email@gmail.com",
+    "password": "your_app_password",
+    "recipients": [
+      "security_team@company.com",
+      "soc@company.com"
+    ]
+  },
+  "webhook": {
+    "enabled": false,
+    "url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+    "auth_token": "optional_bearer_token",
+    "method": "POST"
+  },
+  "alert_thresholds": {
+    "critical_risk_score": 9,
+    "high_risk_score": 7,
+    "send_on_critical_count": 1
+  },
+  "notification_channels": {
+    "on_critical_found": ["email", "webhook"],
+    "on_high_risk_found": ["webhook"],
+    "daily_summary": ["email"]
+  }
+}
