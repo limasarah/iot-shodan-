@@ -1,0 +1,100 @@
+{
+  "cameras": {
+    "name": "RTSP Cameras",
+    "description": "Câmeras IP usando protocolo RTSP",
+    "query": "port:554",
+    "vulnerability_patterns": [
+      "default",
+      "admin",
+      "password"
+    ]
+  },
+  "hp_printers": {
+    "name": "HP LaserJet Printers",
+    "description": "Impressoras HP LaserJet expostas",
+    "query": "product:\"HP LaserJet\"",
+    "vulnerability_patterns": [
+      "default",
+      "admin"
+    ]
+  },
+  "http_servers": {
+    "name": "HTTP Servers",
+    "description": "Servidores web HTTP/HTTPS",
+    "query": "port:80 OR port:443",
+    "vulnerability_patterns": [
+      "401",
+      "403",
+      "unauthorized",
+      "admin"
+    ]
+  },
+  "ftp_servers": {
+    "name": "FTP Servers",
+    "description": "Servidores FTP expostos",
+    "query": "port:21",
+    "vulnerability_patterns": [
+      "anonymous",
+      "default",
+      "admin"
+    ]
+  },
+  "ssh_servers": {
+    "name": "SSH Servers",
+    "description": "Servidores SSH com banner expostos",
+    "query": "port:22 ssh",
+    "vulnerability_patterns": [
+      "OpenSSH 7",
+      "OpenSSH 6",
+      "default"
+    ]
+  },
+  "database_mysql": {
+    "name": "MySQL Databases",
+    "description": "Bancos de dados MySQL expostos",
+    "query": "port:3306 mysql",
+    "vulnerability_patterns": [
+      "root",
+      "default",
+      "password"
+    ]
+  },
+  "database_mongodb": {
+    "name": "MongoDB Instances",
+    "description": "Instâncias MongoDB sem autenticação",
+    "query": "port:27017 mongodb",
+    "vulnerability_patterns": [
+      "unauthorized",
+      "default"
+    ]
+  },
+  "remote_desktop": {
+    "name": "RDP (Remote Desktop)",
+    "description": "Servidores RDP expostos",
+    "query": "port:3389",
+    "vulnerability_patterns": [
+      "admin",
+      "default"
+    ]
+  },
+  "telnet": {
+    "name": "Telnet Services",
+    "description": "Serviços Telnet (inseguros)",
+    "query": "port:23",
+    "vulnerability_patterns": [
+      "admin",
+      "default",
+      "root"
+    ]
+  },
+  "iot_devices": {
+    "name": "IoT Devices",
+    "description": "Dispositivos IoT diversos",
+    "query": "product:\"IoT\" OR product:\"embedded\" OR product:\"industrial\"",
+    "vulnerability_patterns": [
+      "default",
+      "admin",
+      "password"
+    ]
+  }
+}
